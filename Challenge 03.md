@@ -3,9 +3,9 @@
 > Pour ceux qui ont un PC fixe : ouvrez la façade de votre ordinateur (hors tension / après l’avoir débranché ⚠️) et prenez une photo des composants à l’intérieur.  
 > Essayez d’identifier chaque composant présent dans votre ordi !  
 > Pour ceux qui n’ont pas de PC fixe ou ne souhaitent pas l’ouvrir, utilisez une photo d’un PC fixe ouvert trouvée sur le web pour faire le même exercice.
-\
+
 # Réponse
-\
+
 ## Les ports
 ![1759931866856](https://github.com/user-attachments/assets/0ff76818-adbe-4a51-8de9-12150077797f)  
 
