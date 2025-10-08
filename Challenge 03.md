@@ -26,7 +26,7 @@
 - 1 Display port 1.4 HBR3
 - 1 HDMI 2.1
 - 2 USB 2.0
-\
+
 ---
 ## L'interieur du PC
 _je ne me suis pas décidé à tout débrancher et ouvrir mon mini-PC, j'ai pris quelques images sur une vidéo youtube,   
