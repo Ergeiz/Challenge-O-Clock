@@ -65,6 +65,7 @@ On peut ajouter un saut de ligne entre deux lignes de différentes manières, av
 
 ### Listes
 On peut créer une liste non triée en faisant précéder une ou plusieurs lignes de texte de -, * ou +.  
+
 \- élément 1\
 \+ élément 2\
 \* élément 3\
@@ -74,6 +75,7 @@ On peut créer une liste non triée en faisant précéder une ou plusieurs ligne
 * élément 3
 
 Pour des listes numérotées on commence avec un chiffre suivi d'un point.  
+
 1\. élement 1\
 2\. élement 2
 
