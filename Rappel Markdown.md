@@ -1,4 +1,4 @@
-# Rappel Markdown version GitHub
+# Rappel du Markdown pour les fichier .md sur GitHub
 ## Syntaxe de base
 ### En début de ligne
 `# Titre niveau 1` # Titre niveau 1\
