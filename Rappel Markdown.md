@@ -1,11 +1,13 @@
 # Rappel Markdown version GitHub
 ## Syntaxe de base
-### Début de ligne
+### En début de ligne
 `# Titre niveau 1` # Titre niveau 1\
 `## Titre niveau 2` ## Titre niveau 2\
 `### Titre niveau 3`  ### Titre niveau 3\
 `> Citation` > Citation\
-`- texte`\
+Pour faire une séparation: 3 `-` en début de ligne\
+
+---
 
 ### Autour du texte à mettre en évidence
 `**texte** ou __texte__`  **gras**\
@@ -15,8 +17,9 @@
 `***tout un texte***`  ***texte en gras et italique***\
 `texte<sub>indice</sub>`  texte<sub>indice</sub>\
 `texte<sup>exposant</sup>`  texte<sup>exposant</sup>\
-On peut citer du code ou une commande dans une phrase avec des accents graves uniques ` `. Le texte entre les accents graves ne sera pas mis en forme.  
 \`du code\`  `du code`
+
+---
 
 Pour un bloc de code:  
 \```  
@@ -53,8 +56,12 @@ markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
 ```
 
+---
+
 ### Saut de ligne
-On peut ajouter un saut de ligne entre deux lignes de différentes manières, avec 2 espaces sur la première, un \ ou un <br/> 
+On peut ajouter un saut de ligne entre deux lignes de différentes manières, avec 2 espaces sur la première, un \ ou un `<br/>` 
+
+---
 
 ### Listes
 On peut créer une liste non triée en faisant précéder une ou plusieurs lignes de texte de -, * ou +.  
@@ -72,6 +79,8 @@ Pour des listes numérotées on commence avec un chiffre suivi d'un point.
 
 1. élement 1
 2. élement 2
+
+---
 
 ## Tableaux
 
@@ -117,6 +126,8 @@ ou des deux côtés des traits d’union dans la ligne d’en-tête.
 | :---         |     :---:      |          ---: |
 | git status   | git status     | git status    |
 | git diff     | git diff       | git diff      |
+
+---
 
 ### caractère d'échapement \
 Si on veut qu'un caractère ne soit pas pris en compte et puisse s'afficher normalement, on utilise \
