@@ -12,8 +12,7 @@
 ```mermaid
 flowchart TB
 id10(((Exterieur))) ---|- Fibre -| id1([Box Internet
-Router
-Switch
+Free
 ])
 subgraph "Ethernet - RJ45"
 id1 e1@--- id2[PC]
