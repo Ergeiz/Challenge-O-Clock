@@ -28,7 +28,7 @@ e1@{ curve: linear }
 
 ```
 
-## Diagramme logique de mon réseaux
+## Diagramme logique de mon réseau
 
 ```mermaid
 flowchart TB
