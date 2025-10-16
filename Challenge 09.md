@@ -20,6 +20,7 @@
 > Essayez de calculer tout à la main (avec la méthode de votre choix, idéalement essayez d’utiliser les deux !), 
 > puis vérifiez vos calculs avec une calculatrice en ligne ([exemple](https://www.subnet-calculator.com/cidr.php)) !
 
+## Résultat
 <!-- 1er block - 192.168.13.67/24 -->
 <details>
 
