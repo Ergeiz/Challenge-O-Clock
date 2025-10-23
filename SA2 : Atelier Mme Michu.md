@@ -36,8 +36,24 @@ je vais donc chercher sur google, trouve des infos (4)
 :-------------------------:|:-------------------------:
 <img width="1051" height="862" alt="3_ ligne de commande" src="https://github.com/user-attachments/assets/1c2ae318-1e32-4f44-8900-42c18486a9ea" /> | <img width="635" height="899" alt="4_ recherches" src="https://github.com/user-attachments/assets/4da7c7ba-a61f-40b0-be7c-22a69e60aa4f" />
 
-Je lance donc **DiskPart** et lui demande d'Afficher les disques et volumes aves les commandes `list disk` et `list vol`
-Je vois les volumes C: au ~ de 50 MO réservé au système et une F: caché de ~ 500 Mo, et le volume E: qui me parait être la partition windows.
-je me dis que ca doit être la F:, l'autre me parait trop petite, Je fais la commande `bcdboot E:\windows /s F:`
-Je tape ensuite `bootrec /rebuildbcd` , ca me dit que c'est réussi, je redémarre, ca marche pas, je retourne dans la ligne de commande
+Je lance donc **DiskPart** et lui demande d'Afficher les disques et volumes aves les commandes `list disk` et `list vol`  
+Je vois les volumes C: au ~ de 50 MO réservé au système et une F: caché de ~ 500 Mo, et le volume E: me parait être la partition windows. (5)  
+je me dis que ca doit être la F:, l'autre me parait trop petite, Je fais la commande `bcdboot E:\windows /s F:`  
+Je tape ensuite `bootrec /rebuildbcd` , ca me dit que c'est réussi, je redémarre, **ca marche pas** 🤨  
+Je retourne dans la ligne de commande en me disant "Bon c'était C: la partition système"
+
+Entre-temps j'apperçois le post sur Slack redonnant les commandes, je recharge une snapshot, je tape les commandes `bootrec /fixmbr`, `bcdboot E:\Windows`, et `bootrec /rebuildbcd`  
+Je sors de la ligne de commande, clique sur "poursuivre sur Windows 10" et j'arrice devant l'ecran bleu (6)
+5    |    6
+:-------------------------:|:-------------------------:
+<img width="1026" height="854" alt="5 DiskPart" src="https://github.com/user-attachments/assets/a8e92aa5-09c6-4223-8d1f-f102570865a2" /> | <img width="1026" height="854" alt="blue" src="https://github.com/user-attachments/assets/d9376c86-b34d-4f4e-aed3-9d4e69a41da9" />
+
+Donc je vois sur le blue screen qu'il manque Winload.exe, je retourne à la ligne de commande et me dit qu'un petit chkdsk pourrait être une bonne idée.  
+Je tape donc `chkdsk /R /F` sur E:. Et je vais le regretter car j'ai assez vite l'impressions que le chkdsk va durer des plombes !  
+La vérification se termine en ne trouvant pas d'erreur, j'opte donc pour lancer l'**"Outil de redémarrage système"** voir ce que ça donne.  
+Et J'arrive sur l'écran d'accueil Windows 😊
+7    |    8
+:-------------------------:|:-------------------------:
+<img width="1026" height="854" alt="7 chkdsk" src="https://github.com/user-attachments/assets/b9c9dfbd-ac2c-4dce-a3e7-f1e2830ef5ad" /> | <img width="1154" height="950" alt="8 accueil" src="https://github.com/user-attachments/assets/af6e97a4-a532-408e-b6ae-e0fd23dff8ac" />
+
 
