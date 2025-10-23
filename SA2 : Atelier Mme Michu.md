@@ -22,16 +22,17 @@
 > Prends ton temps et suis les étapes dans l’ordre !
 
 ## Résultat
-J'ai importé et lancé la VM dans virtual box, je vois l'écran noir avec l'erreur, je monte Win10 en lecteur virtuel.
+J'ai importé et lancé la VM dans virtual box, je vois l'écran noir avec l'erreur, je monte Win10 en lecteur virtuel.  
 
  1    |    2
 :-------------------------:|:-------------------------:
 <img width="520" height="458" alt="1_ initial" src="https://github.com/user-attachments/assets/30046bed-8aa6-40a3-8c7e-0f666e312bde" /> |  <img width="520" height="363" alt="2_ montage iso" src="https://github.com/user-attachments/assets/4acefaa0-f4cf-4b8b-9a3f-e693eba72143" />
 
-J'ai redémarré sur le cd, choisi "Réparer mon ordinateur personnel", puis "Dépannage" et "Ligne de commande".
-Une fois sur la ligne de commande (3), je tape la commande `bootrec /fixmbr`, ca me dit que la commande à reussi, je tape ensuite `bootrec /fixboot`
-Ici j'ai un message d'erreur: **Accès refusé**  
-je vais donc chercher sur google, trouve des infos (4)
+J'ai redémarré sur le cd, choisi "Réparer mon ordinateur personnel", puis "Dépannage" et "Ligne de commande".  
+Une fois sur la ligne de commande (3), je tape la commande `bootrec /fixmbr`, ca me dit que la commande à reussi, je tape ensuite `bootrec /fixboot`  
+Ici j'ai un message d'erreur: *Accès refusé*  
+je vais donc chercher sur google, trouve des infos (4)  
+
 3    |    4
 :-------------------------:|:-------------------------:
 <img width="1051" height="862" alt="3_ ligne de commande" src="https://github.com/user-attachments/assets/1c2ae318-1e32-4f44-8900-42c18486a9ea" /> | <img width="635" height="899" alt="4_ recherches" src="https://github.com/user-attachments/assets/4da7c7ba-a61f-40b0-be7c-22a69e60aa4f" />
@@ -43,22 +44,24 @@ Je tape ensuite `bootrec /rebuildbcd` , ca me dit que c'est réussi, je redémar
 Je retourne dans la ligne de commande en me disant "Bon c'était C: la partition système"
 
 Entre-temps j'apperçois le post sur Slack redonnant les commandes, je recharge une snapshot, je tape les commandes `bootrec /fixmbr`, `bcdboot E:\Windows`, et `bootrec /rebuildbcd`  
-Je sors de la ligne de commande, clique sur "poursuivre sur Windows 10" et j'arrice devant l'ecran bleu (6)
+Je sors de la ligne de commande, clique sur "poursuivre sur Windows 10" et j'arrice devant l'ecran bleu (6)  
+
 5    |    6
 :-------------------------:|:-------------------------:
 <img width="1026" height="854" alt="5 DiskPart" src="https://github.com/user-attachments/assets/a8e92aa5-09c6-4223-8d1f-f102570865a2" /> | <img width="1026" height="854" alt="blue" src="https://github.com/user-attachments/assets/d9376c86-b34d-4f4e-aed3-9d4e69a41da9" />
 
 Ainsi je vois sur le blue screen qu'il manque Winload.exe, je retourne à la ligne de commande et me dit qu'un petit chkdsk pourrait être une bonne idée.  
-Je tape donc `chkdsk /R /F` sur E:. Et je vais le regretter car j'ai assez vite l'impressions que le chkdsk va durer des plombes ! (7) 
-La vérification se termine en ne trouvant pas d'erreur, j'opte donc pour lancer l'**"Outil de redémarrage système"** voir ce que ça donne.  
-Et J'arrive sur l'écran d'accueil Windows 😊(8)
+Je tape donc `chkdsk /R /F` sur E:. Et je vais le regretter car j'ai assez vite l'impressions que le chkdsk va durer des plombes ! (7)  
+La vérification se termine en ne trouvant pas d'erreur, j'opte donc pour lancer l'**Outil de redémarrage système** voir ce que ça donne.  
+Et J'arrive sur l'écran d'accueil Windows 😊(8)  
+
 7    |    8
 :-------------------------:|:-------------------------:
 <img width="1026" height="854" alt="7 chkdsk" src="https://github.com/user-attachments/assets/b9c9dfbd-ac2c-4dce-a3e7-f1e2830ef5ad" /> | <img width="1154" height="950" alt="8 accueil" src="https://github.com/user-attachments/assets/af6e97a4-a532-408e-b6ae-e0fd23dff8ac" />
 
 à partir de là, je lance le gestionnaire des tâche (9), je vois CPU et RAM surchargé, et aussi pleins de processus ping, je suppose un soucis avec le réseau.  
 Je jette un oeil à l'observateur d'événement, je ne vois rien qui me saute au yeux, je vois dans la barre des tâche l'icone du **centre de sécurité Windows** pour des actions recommandés, je vais donc fouiller dans la configuration du centre de sécurité.  
-Je regarde les actions recommandées, protection contre les virus et menace, protection du compte, OneDrive, et dans l'onglet "Contrôle des applications et du navigateur", je vois l'option "Protection fondée sur la réputation", je l'active, je ne touche pas à OneDrive et le reste.
+Je regarde les actions recommandées, protection contre les virus et menace, protection du compte, OneDrive, et dans l'onglet "Contrôle des applications et du navigateur", je vois l'option "Protection fondée sur la réputation", je l'active, je ne touche pas à OneDrive et le reste.  
 Peu de temps après plus de surcharge du cpu et de la ram. (10)
 
 9    |    10
@@ -68,14 +71,14 @@ Peu de temps après plus de surcharge du cpu et de la ram. (10)
 Cétait un peu du pif mais bon on va pas se plaindre.  
 Maintenant il faut retrouver les fichiers de madame Michu !
 J'active l'option "afficher les dossiers cachés" au ca où, je lis le fichier **S O S !**, j'apprend que le dossier York à été effacé.  
-Je vais voir si l'"Historique des fichiers" avait été activé, et coup de bol c'est le cas ! (11)
+Je vais voir si l'**Historique des fichiers** avait été activé, et coup de bol c'est le cas ! (11)
 Je cherche donc de rétablir le dossier York à son emplacement, mais apperement il est sur un volume qui n'est pas connecté (12)
 
 11    |    12
 :-------------------------:|:-------------------------:
 <img width="1154" height="950" alt="11" src="https://github.com/user-attachments/assets/84e93c01-8111-4d87-943c-d50f886db615" /> | <img width="1154" height="950" alt="12" src="https://github.com/user-attachments/assets/6772d0a8-605e-4562-b368-1740cacec196" />
 
-Je part dans le "Gestionnaire des disques", je vois le disque 1 Hors co, je le connecte d'un click droit, je retourne dans l'historique des fichiers, et je restaure le dossier York, madame Michu sera ravie ! 😁 
+Je part dans le **Gestionnaire des disques**, je vois le disque 1 Hors co, je le connecte d'un click droit, je retourne dans l'historique des fichiers, et je restaure le dossier York, madame Michu sera ravie ! 😁 
 
 13    |    14    |   15
 :-------------------------:|:-------------------------:|:-------------------------:
