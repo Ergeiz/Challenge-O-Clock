@@ -38,9 +38,9 @@ je vais donc chercher sur google, trouve des infos (4)
 <img width="1051" height="862" alt="3_ ligne de commande" src="https://github.com/user-attachments/assets/1c2ae318-1e32-4f44-8900-42c18486a9ea" /> | <img width="635" height="899" alt="4_ recherches" src="https://github.com/user-attachments/assets/4da7c7ba-a61f-40b0-be7c-22a69e60aa4f" />
 
 Je lance donc **DiskPart** et lui demande d'Afficher les disques et volumes aves les commandes `list disk` et `list vol`  
-Je vois les volumes C: au ~ de 50 MO réservé au système et une F: caché de ~ 500 Mo, et le volume E: me parait être la partition windows. (5)  
-je me dis que ca doit être la F:, l'autre me parait trop petite, Je fais la commande `bcdboot E:\windows /s F:`  
-Je tape ensuite `bootrec /rebuildbcd` , ca me dit que c'est réussi, je redémarre, **ca marche pas** 🤨  
+Je vois les volumes C: au ~ de 50 MO réservé au système et une F: caché de ~ 500 Mo, et le volume E: me semble être la partition windows. (5)  
+je me dis que c'est surement la F:, l'autre me parait trop petite, Je fais la commande `bcdboot E:\windows /s F:`  
+Je tape ensuite `bootrec /rebuildbcd` , la commande me dit que c'est réussi, je redémarre, **ça marche pas** 🤨  
 Je retourne dans la ligne de commande en me disant "Bon c'était C: la partition système"
 
 Entre-temps j'apperçois le post sur Slack redonnant les commandes, je recharge une snapshot, je tape les commandes `bootrec /fixmbr`, `bcdboot E:\Windows`, et `bootrec /rebuildbcd`  
@@ -60,18 +60,19 @@ Et J'arrive sur l'écran d'accueil Windows 😊(8)
 <img width="1026" height="854" alt="7 chkdsk" src="https://github.com/user-attachments/assets/b9c9dfbd-ac2c-4dce-a3e7-f1e2830ef5ad" /> | <img width="1154" height="950" alt="8 accueil" src="https://github.com/user-attachments/assets/af6e97a4-a532-408e-b6ae-e0fd23dff8ac" />
 
 À partir de là, je lance le gestionnaire des tâche (9), je vois CPU et RAM surchargé, et aussi pleins de processus ping, je suppose un soucis avec le réseau.  
-Je jette un oeil à l'observateur d'événement, je ne vois rien qui me saute au yeux, je vois dans la barre des tâche l'icone du **centre de sécurité Windows** pour des actions recommandés, je vais donc fouiller dans la configuration du centre de sécurité.  
-Je regarde les actions recommandées, protection contre les virus et menace, protection du compte, OneDrive, et dans l'onglet "Contrôle des applications et du navigateur", je vois l'option "Protection fondée sur la réputation", je l'active, je ne touche pas à OneDrive et le reste.  
+Je jette un oeil à l'observateur d'événement, rien ne me saute au yeux.  
+J'apperçois dans la barre des tâche l'icone du **centre de sécurité Windows** pour des actions recommandés, je vais donc fouiller dans la configuration du centre de sécurité.  
+Je vois les actions recommandées pour **Protection contre les virus et menace**, **Protection du compte**, **OneDrive**, et dans l'onglet "Contrôle des applications et du navigateur", je vois l'option **Protection fondée sur la réputation**, je l'active, je ne touche pas à OneDrive et le reste.  
 Peu de temps après plus de surcharge du cpu et de la ram. (10)
 
 9    |    10
 :-------------------------:|:-------------------------:
 <img width="1154" height="950" alt="9 tache1" src="https://github.com/user-attachments/assets/19238934-e0a1-435f-b92c-a88a350ac770" /> | <img width="1154" height="950" alt="10 tache2" src="https://github.com/user-attachments/assets/6f17cd23-162c-4cf9-89f7-a624d7a4bec0" />
 
-Cétait un peu du pif mais bon on va pas se plaindre.  
+C'était un peu du pif mais bon on va pas se plaindre.  
 Maintenant il faut retrouver les fichiers de madame Michu !
-J'active l'option "afficher les dossiers cachés" au ca où, je lis le fichier **S O S !**, j'apprend que le dossier York à été effacé.  
-Je vais voir si l'**Historique des fichiers** avait été activé, et coup de bol c'est le cas ! (11)
+J'active l'option "afficher les dossiers cachés" au cas où, je lis le fichier **S O S !**, j'apprend que le dossier York à été effacé.  
+Je vais voir si l'**Historique des fichiers** avait été activé avant le drame, et coup de bol c'est le cas ! (11)
 Je cherche donc de rétablir le dossier York à son emplacement, mais apparemment il est sur un volume qui n'est pas connecté (12)
 
 11    |    12
