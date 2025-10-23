@@ -78,7 +78,7 @@ Je cherche donc de rétablir le dossier York à son emplacement, mais apparemmen
 :-------------------------:|:-------------------------:
 <img width="1154" height="950" alt="11" src="https://github.com/user-attachments/assets/84e93c01-8111-4d87-943c-d50f886db615" /> | <img width="1154" height="950" alt="12" src="https://github.com/user-attachments/assets/6772d0a8-605e-4562-b368-1740cacec196" />
 
-Je part dans le **Gestionnaire des disques**, je vois le disque 1 Hors co, je le connecte d'un click droit, je retourne dans l'historique des fichiers, et je restaure le dossier York, madame Michu sera ravie ! 😁 
+Je pars dans le **Gestionnaire des disques**, je vois le disque 1 Hors co, je le connecte d'un click droit, je retourne dans l'historique des fichiers, et je restaure le dossier York, madame Michu sera ravie ! 😁 
 
 13    |    14    |   15
 :-------------------------:|:-------------------------:|:-------------------------:
