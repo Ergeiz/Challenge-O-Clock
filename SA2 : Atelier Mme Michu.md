@@ -48,12 +48,42 @@ Je sors de la ligne de commande, clique sur "poursuivre sur Windows 10" et j'arr
 :-------------------------:|:-------------------------:
 <img width="1026" height="854" alt="5 DiskPart" src="https://github.com/user-attachments/assets/a8e92aa5-09c6-4223-8d1f-f102570865a2" /> | <img width="1026" height="854" alt="blue" src="https://github.com/user-attachments/assets/d9376c86-b34d-4f4e-aed3-9d4e69a41da9" />
 
-Donc je vois sur le blue screen qu'il manque Winload.exe, je retourne à la ligne de commande et me dit qu'un petit chkdsk pourrait être une bonne idée.  
-Je tape donc `chkdsk /R /F` sur E:. Et je vais le regretter car j'ai assez vite l'impressions que le chkdsk va durer des plombes !  
+Ainsi je vois sur le blue screen qu'il manque Winload.exe, je retourne à la ligne de commande et me dit qu'un petit chkdsk pourrait être une bonne idée.  
+Je tape donc `chkdsk /R /F` sur E:. Et je vais le regretter car j'ai assez vite l'impressions que le chkdsk va durer des plombes ! (7) 
 La vérification se termine en ne trouvant pas d'erreur, j'opte donc pour lancer l'**"Outil de redémarrage système"** voir ce que ça donne.  
-Et J'arrive sur l'écran d'accueil Windows 😊
+Et J'arrive sur l'écran d'accueil Windows 😊(8)
 7    |    8
 :-------------------------:|:-------------------------:
 <img width="1026" height="854" alt="7 chkdsk" src="https://github.com/user-attachments/assets/b9c9dfbd-ac2c-4dce-a3e7-f1e2830ef5ad" /> | <img width="1154" height="950" alt="8 accueil" src="https://github.com/user-attachments/assets/af6e97a4-a532-408e-b6ae-e0fd23dff8ac" />
+
+à partir de là, je lance le gestionnaire des tâche (9), je vois CPU et RAM surchargé, et aussi pleins de processus ping, je suppose un soucis avec le réseau.  
+Je jette un oeil à l'observateur d'événement, je ne vois rien qui me saute au yeux, je vois dans la barre des tâche l'icone du **centre de sécurité Windows** pour des actions recommandés, je vais donc fouiller dans la configuration du centre de sécurité.  
+Je regarde les actions recommandées, protection contre les virus et menace, protection du compte, OneDrive, et dans l'onglet "Contrôle des applications et du navigateur", je vois l'option "Protection fondée sur la réputation", je l'active, je ne touche pas à OneDrive et le reste.
+Peu de temps après plus de surcharge du cpu et de la ram. (10)
+
+9    |    10
+:-------------------------:|:-------------------------:
+<img width="1154" height="950" alt="9 tache1" src="https://github.com/user-attachments/assets/19238934-e0a1-435f-b92c-a88a350ac770" /> | <img width="1154" height="950" alt="10 tache2" src="https://github.com/user-attachments/assets/6f17cd23-162c-4cf9-89f7-a624d7a4bec0" />
+
+Cétait un peu du pif mais bon on va pas se plaindre.  
+Maintenant il faut retrouver les fichiers de madame Michu !
+J'active l'option "afficher les dossiers cachés" au ca où, je lis le fichier **S O S !**, j'apprend que le dossier York à été effacé.  
+Je vais voir si l'"Historique des fichiers" avait été activé, et coup de bol c'est le cas ! (11)
+Je cherche donc de rétablir le dossier York à son emplacement, mais apperement il est sur un volume qui n'est pas connecté (12)
+
+11    |    12
+:-------------------------:|:-------------------------:
+<img width="1154" height="950" alt="11" src="https://github.com/user-attachments/assets/84e93c01-8111-4d87-943c-d50f886db615" /> | <img width="1154" height="950" alt="12" src="https://github.com/user-attachments/assets/6772d0a8-605e-4562-b368-1740cacec196" />
+
+Je part dans le "Gestionnaire des disques", je vois le disque 1 Hors co, je le connecte d'un click droit, je retourne dans l'historique des fichiers, et je restaure le dossier York, madame Michu sera ravie ! 😁 
+
+13    |    14    |   15
+:-------------------------:|:-------------------------:|:-------------------------:
+<img width="1154" height="950" alt="13" src="https://github.com/user-attachments/assets/4e66657f-53f5-4e26-8413-ce1eeada5026" /> | <img width="1154" height="950" alt="14" src="https://github.com/user-attachments/assets/4cedeb1e-a950-4300-a0d6-7b94b0c04f6c" /> | <img width="1154" height="950" alt="15" src="https://github.com/user-attachments/assets/2345c021-7888-4ae7-beb2-ca804717071e" />
+
+
+
+
+
 
 
