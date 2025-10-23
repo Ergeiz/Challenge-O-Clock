@@ -10,10 +10,10 @@
 > >
 > Ta mission est de diagnostiquer et corriger les différentes pannes présentes sur la machine de Madame Michu en suivant ces quatre étapes :
 >
->    Réparer le démarrage de Windows,
->    Restaurer les performances normales de la machine,
->    Vérifier l’état des disques durs,
->    Retrouver les fichiers disparus dans le dossier « Images ».
+>    1. **Réparer le démarrage de Windows,**
+>    2. **Restaurer les performances normales de la machine,**
+>    3. **Vérifier l’état des disques durs,**
+>    4. **Retrouver les fichiers disparus dans le dossier « Images ».**
 >
 > Vu que ce serait contraignant de vous envoyer le PC de Mme Michu par la poste, on va travailler sur une machine virtuelle VirtualBox. Télécharge-la ici au format OVA et commence ta mission 💪
 >
