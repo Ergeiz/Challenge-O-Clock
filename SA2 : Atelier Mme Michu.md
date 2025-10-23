@@ -72,7 +72,7 @@ Cétait un peu du pif mais bon on va pas se plaindre.
 Maintenant il faut retrouver les fichiers de madame Michu !
 J'active l'option "afficher les dossiers cachés" au ca où, je lis le fichier **S O S !**, j'apprend que le dossier York à été effacé.  
 Je vais voir si l'**Historique des fichiers** avait été activé, et coup de bol c'est le cas ! (11)
-Je cherche donc de rétablir le dossier York à son emplacement, mais apperement il est sur un volume qui n'est pas connecté (12)
+Je cherche donc de rétablir le dossier York à son emplacement, mais apparemment il est sur un volume qui n'est pas connecté (12)
 
 11    |    12
 :-------------------------:|:-------------------------:
