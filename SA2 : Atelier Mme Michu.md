@@ -44,7 +44,7 @@ Je tape ensuite `bootrec /rebuildbcd` , ca me dit que c'est réussi, je redémar
 Je retourne dans la ligne de commande en me disant "Bon c'était C: la partition système"
 
 Entre-temps j'apperçois le post sur Slack redonnant les commandes, je recharge une snapshot, je tape les commandes `bootrec /fixmbr`, `bcdboot E:\Windows`, et `bootrec /rebuildbcd`  
-Je sors de la ligne de commande, clique sur "poursuivre sur Windows 10" et j'arrice devant l'ecran bleu (6)  
+Je sors de la ligne de commande, clique sur "poursuivre sur Windows 10" et j'arrive devant l'ecran bleu (6)  
 
 5    |    6
 :-------------------------:|:-------------------------:
