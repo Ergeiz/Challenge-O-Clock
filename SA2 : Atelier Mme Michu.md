@@ -59,7 +59,7 @@ Et J'arrive sur l'écran d'accueil Windows 😊(8)
 :-------------------------:|:-------------------------:
 <img width="1026" height="854" alt="7 chkdsk" src="https://github.com/user-attachments/assets/b9c9dfbd-ac2c-4dce-a3e7-f1e2830ef5ad" /> | <img width="1154" height="950" alt="8 accueil" src="https://github.com/user-attachments/assets/af6e97a4-a532-408e-b6ae-e0fd23dff8ac" />
 
-à partir de là, je lance le gestionnaire des tâche (9), je vois CPU et RAM surchargé, et aussi pleins de processus ping, je suppose un soucis avec le réseau.  
+À partir de là, je lance le gestionnaire des tâche (9), je vois CPU et RAM surchargé, et aussi pleins de processus ping, je suppose un soucis avec le réseau.  
 Je jette un oeil à l'observateur d'événement, je ne vois rien qui me saute au yeux, je vois dans la barre des tâche l'icone du **centre de sécurité Windows** pour des actions recommandés, je vais donc fouiller dans la configuration du centre de sécurité.  
 Je regarde les actions recommandées, protection contre les virus et menace, protection du compte, OneDrive, et dans l'onglet "Contrôle des applications et du navigateur", je vois l'option "Protection fondée sur la réputation", je l'active, je ne touche pas à OneDrive et le reste.  
 Peu de temps après plus de surcharge du cpu et de la ram. (10)
