@@ -39,7 +39,7 @@ je vais donc chercher sur google, trouve des infos (4)
 
 Je lance donc **DiskPart** et lui demande d'Afficher les disques et volumes aves les commandes `list disk` et `list vol`  
 Je vois les volumes C: au ~ de 50 MO réservé au système et une F: caché de ~ 500 Mo, et le volume E: me semble être la partition windows. (5)  
-je me dis que c'est surement la F:, l'autre me parait trop petite, Je fais la commande `bcdboot E:\windows /s F:`  
+je me dis que c'est surement la F: la partition système, l'autre me parait trop petite, Je fais la commande `bcdboot E:\windows /s F:`  
 Je tape ensuite `bootrec /rebuildbcd` , la commande me dit que c'est réussi, je redémarre, **ça marche pas** 🤨  
 Je retourne dans la ligne de commande en me disant "Bon c'était C: la partition système"
 
