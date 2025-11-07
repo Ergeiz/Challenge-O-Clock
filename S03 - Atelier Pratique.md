@@ -18,7 +18,7 @@ VPN : `203.0.113.0/24` (254 adresses)
 Lan : `10.1.0.0/22` (1022 adresses, de `10.1.0.1` à `10.1.3.254`)  
 Wifi : `10.111.0.0` (1022 adresse, de `10.111.0.1` à `10.111.3.254`)
 
-## Materiel
+# Materiel
 
 Nous devront faire le réseau avec le matériel prevu :
 | Matériel | Total | Image
@@ -36,11 +36,47 @@ Autres équipements :
 - 4 serveurs
 - 3 copieurs
 
-## Packet Tacer  
+## Packet Tacer - Répartition du matériel
 
-<img width="1871" height="703" alt="image" src="https://github.com/user-attachments/assets/d95e433b-b738-4846-b0ca-a3d4398b900b" />
+<img width="1856" height="712" alt="image" src="https://github.com/user-attachments/assets/1095fb26-494e-4519-aaf7-693b6de413a1" />
+
+Nous avons reparti le materiel de cette façon:  
+- les switchs Cisco 3650-24PS pour les réseaux Lan, Dmz et R&D  
+- les switchs Cisco 2960-24TT pour les réseaux WiFi et le vpn  
+- Un routeur Cisco 2901 pour le réseau de Paris et un pour le réseau de Lille  
+- Le routeur Cisco 1941 pour le VPN  
 
 
+Pour les cartes et modules:  
+- Dans le Switch R&D nous mettons un AC-POWER-SUPPLY et un SFP GLC-LH-SMD  
+- Dans le Switch Serveurs un AC-POWER-SUPPLY et 2 SFP GLC-LH-SMD  
+- Dans le SwitchLanParis un AC-POWER-SUPPLY et un SFP GLC-LH-SMD  
+- Dans le SwitchLanLille un AC-POWER-SUPPLY et un SFP GLC-LH-SMD  
+- Dans le routeur RouterParis 3 HWIC-1GE-SFP avec 3 SFP GLC-LH-SMD, et un HWIC-2T  
+- Dans le RouterLille un HWIC-1GE-SFP avec un GLC-LH-SMD  
+- Dans le routeur VPN un HWIC-1GE-SFP avec un SFP GLC-LH-SMD, et un HWIC-2T  
+  
+## Packet Tracer - configuration
+
+
+<img width="1861" height="712" alt="image" src="https://github.com/user-attachments/assets/8ee9fc70-e7fd-4ef7-b337-eeb7e53f3325" />
+
+
+nous configurons tous les switch, par exemple avec celui du réseau R&D
+```
+router> enable
+router# conf t
+router (config)# interface vlan1
+router (config-if)# ip address 192.168.0.252 255.255.255.0
+router (config-if)# no shutdown
+router (config-if)# exit
+router (config)# hostname r&d
+r&d (config)# enable secret wsxwsx
+r&d (config)# end
+r&d# exit
+```
+nous configurons ensuite le routeur de Paris, il doit être connecté à 4 sous-reseau, par exemple pour celui de la DMZ
+```
 
 
 
