@@ -24,7 +24,7 @@ Wifi : `10.111.0.0` (1022 adresse, de `10.111.0.1` à `10.111.3.254`)
 
 Je dois faire le réseau avec le matériel prevu :
 | Matériel | Total | Image
-|:---:|:---:|:--:|
+|:---:|:---:|:---:|
 | Routeurs Cisco 2901 | 2 | ![CISCO2901_lg](https://github.com/user-attachments/assets/cad81a5e-c9cb-47a6-b745-4a910147f85c) |
 | Routers Cisco 1941 | 1 |  ![cisco-router-1900-series-cisco-1941-k9-sale-repair-rental-500x500-600x600-2882285535](https://github.com/user-attachments/assets/3a3f2e5e-5e70-45a4-b808-49bb54b96d7d) |
 | carte routeur HWIC-1GE-SFP | 5 | <img width="636" height="240" alt="HWIC-1GE-SFP-2472865841" src="https://github.com/user-attachments/assets/a5327111-6a52-4453-8bf9-e14aeffcffe0" /> |
@@ -78,7 +78,7 @@ r&d (config)# end
 r&d# wr m
 
 ```
-Je configure ensuite le routeur de Paris, il doit être connecté à 4 sous-reseau, par exemple pour le gateway de la DMZ
+Je configure ensuite le routeur de Paris, il doit être connecté à 4 sous-reseaux, par exemple pour le gateway de la DMZ
 ```
 router> enable
 router# conf t
@@ -103,10 +103,10 @@ ServerParis (config)# ip route 0.0.0.0 0.0.0.0 92.12.34.2
 <img width="677" height="218" alt="image" src="https://github.com/user-attachments/assets/b8b2a57f-d458-4dad-b9f9-b64c032343f0" />
 
 
-Les paquets qui voudront sortir tout en ne ciblant pas le réseau VPN ira vers le serveur de Lille
+Les paquets qui voudront sortir tout en ne ciblant pas le réseau VPN iront vers le serveur de Lille
 Je détermine une route par défaut sur le server de Lille en direction du server de Paris, de même avec le serveur vpn en direction du server de Paris
 
-Maintenant, certaines machines ont une addresse ip statique, mais d'autre attendent serveur dhcp leur en attribue une, on peut le faire avec un routeur.
+Maintenant, certaines machines ont une addresse ip statique, mais d'autre attendent qu'un serveur dhcp leur en attribue une, on peut le faire avec un routeur.
 
 Au niveau du routeur, il faudra définir un pool pour chaque sous réseau
 Si on veut configurer un pool pour le lan de Paris :
@@ -132,9 +132,9 @@ ou sur un ordi du R&D
 
 <img width="1125" height="652" alt="image" src="https://github.com/user-attachments/assets/2acca112-3b39-4723-8dd6-ed1afa4ba716" />
 
-Le DHCP est plutôt fonctionnel
+Le DHCP est fonctionnel
 
-La suite de l'exercice étant de remplacer les switchs WiFi par des relay et d'ajouter un serveur DHCP dans la DMZ et le faire faonctionner sur les deux sous réseau lan et DMZ
+La suite étant de remplacer les switchs WiFi par des relay et d'ajouter un serveur DHCP dans la DMZ et le faire fonctionner sur les différents sous-réseaux
 
 
 <img width="1843" height="709" alt="image" src="https://github.com/user-attachments/assets/b54e6850-4ffd-4683-b659-94cc97576281" />
@@ -175,7 +175,7 @@ ca m'a l'air fonctionnel
 <img width="609" height="518" alt="image" src="https://github.com/user-attachments/assets/8f3a22e3-0271-440b-9995-63334dc2d800" />
 sur le router aucune trace de configuration DHCP donc c'est bien notre serveur DHCP qui attribue des addresse IP pour les machines des autres sous-réseau
 
-Pour la parie de Lille je garde la config DHCP du RouterLille
+Pour la partie de Lille je garde la config DHCP du RouterLille.
 
 <img width="483" height="538" alt="image" src="https://github.com/user-attachments/assets/01e25ffa-2c32-40fa-8bea-1bcc3ab8e85c" />
 
