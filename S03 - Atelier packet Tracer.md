@@ -1,7 +1,7 @@
 
 
 
-# Atelier Packet Tracer Plan d'adressage  
+# Atelier Packet Tracer - Plan d'adressage  
 ## Nomenclature  
 J'envisage les adresses `10.0.0.0/22` pour le lan de Paris, `10.1.0.0/22` pour celui de Lille, et ainsi de suite pour les autres départements (`10.2.0.0/22`, `10.3.0.0/22`, etc.)  
 Pareil pour le WiFi, mais à partir de `10.110.0.0/22`, de cette facon que ca soit Lan ou WiFi on couvrera tous les départements.  
