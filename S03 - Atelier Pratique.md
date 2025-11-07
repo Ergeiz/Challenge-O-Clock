@@ -64,19 +64,127 @@ Pour les cartes et modules:
 
 nous configurons tous les switch, par exemple avec celui du réseau R&D
 ```
-router> enable
-router# conf t
-router (config)# interface vlan1
-router (config-if)# ip address 192.168.0.252 255.255.255.0
-router (config-if)# no shutdown
-router (config-if)# exit
-router (config)# hostname r&d
+switch> enable
+switch# conf t
+switch (config)# interface vlan1
+switch (config-if)# ip address 192.168.0.252 255.255.255.0
+switch (config-if)# no shutdown
+switch (config-if)# exit
+switch (config)# hostname r&d
 r&d (config)# enable secret wsxwsx
 r&d (config)# end
-r&d# exit
+r&d# wr m
+
 ```
-nous configurons ensuite le routeur de Paris, il doit être connecté à 4 sous-reseau, par exemple pour celui de la DMZ
+nous configurons ensuite le routeur de Paris, il doit être connecté à 4 sous-reseau, par exemple pour le gateway de la DMZ
 ```
+router> enable
+router# conf t
+router(config)# interface gigabitEthernet 0/0/0
+router (config-if)# ip address 192.168.0.1 255.255.255.0
+router (config-if)# no shutdown
+router (config-if)# end
+```
+
+
+on en profite pour changer le hostname et ajouter un mot de passe  
+on fait pareil avec les autres routeurs  
+ensuite pour les routage, sur le serveur de Paris, on fait une route statique ciblant le réseau 203.0.112.0 vers le serveur VPN et une route par défaut vers le serveur de Lille :
+
+```
+ServerParis> enable
+ServerParis# conf t
+ServerParis (config)# ip route 203.0.113.0 255.255.255.0 92.56.78.2
+ServerParis (config)# ip route 0.0.0.0 0.0.0.0 92.12.34.2
+```
+
+<img width="677" height="218" alt="image" src="https://github.com/user-attachments/assets/b8b2a57f-d458-4dad-b9f9-b64c032343f0" />
+
+
+Ce qui voudra sortir tout en ne ciblant pas le réseau VPN ira vers le serveur de Lille
+on fait une route par défaut sur le server de Lille en direction du server de Paris, de même avec le serveur vpn en direction du server de Paris
+
+Maintenant, certaines machines ont une addresse ip statique, mais d'autre attendent serveur dhcp leur en attribue une, on peut le faire avec un routeur.
+
+Au niveau du routeur, uil faudra définir un pool pour chaque sous réseau
+Si on veut configurer un pool pour le lan de Paris :
+```
+RouterParis (config)# ip dhcp pool LAN1
+RouterParis (dhcp-config)# network 10.0.0.11 255.255.252.0
+RouterParis (dhcp-config)# default-router 10.0.0.1
+RouterParis (dhcp-config)# dns-server 8.8.8.8
+RouterParis (dhcp-config)# exit
+RouterParis (config)# ip dhcp excluded-address 10.0.0.1 10.0.0.10
+RouterParis (config)# end
+```
+
+ <img width="470" height="522" alt="image" src="https://github.com/user-attachments/assets/78194884-3a26-4d3f-ba6a-8012db1a34d9" />
+
+<img width="905" height="350" alt="image" src="https://github.com/user-attachments/assets/627a3aea-45d5-49f0-abe2-c5a367a25f66" />
+
+Si on tente un ping sur un pc du lan de Lille
+
+<img width="1833" height="505" alt="image" src="https://github.com/user-attachments/assets/fce32815-c61d-4491-9c75-a049357c3cfd" />
+
+ou sur un ordi du R&D
+
+<img width="1125" height="652" alt="image" src="https://github.com/user-attachments/assets/2acca112-3b39-4723-8dd6-ed1afa4ba716" />
+
+Le DHCP est plutôt fonctionnel
+
+La suite de l'exercice étant de remplacer les switchs WiFi par des relay et d'ajouter un serveur DHCP dans la DMZ et le faire faonctionner sur les deux sous réseau lan et DMZ
+
+
+<img width="1843" height="709" alt="image" src="https://github.com/user-attachments/assets/b54e6850-4ffd-4683-b659-94cc97576281" />
+
+J'ai pas beaucoup d'option de configuration sur les relays WiFi, j'imagine que ça se joue au niveau du router  
+
+Du coup occupons nous du server DHCP.
+Déjà j'efface les pool configuré sur le router
+```
+RouterParis (config)# no ip dhcp pool LAN1
+```
+Ainsi que les plages d'address exclues du DHCP
+
+```
+RouterParis (config)# no ip dhcp excluded-address 10.0.0.1 10.0.0.10
+```
+On fait ca pour les 3 sous-réseau, normalement il ne reste plus rien dans la config
+
+Maintenant dans le serveur DHCP on va faire un pool pour chaque sous-réseau
+
+<img width="980" height="453" alt="image" src="https://github.com/user-attachments/assets/a3e2f393-77d5-453d-9a83-ab939a609334" />
+
+Ensuite il faut indiquer au routeur de relayer les trames de diffusion dhcp vers le server dhcp, pour cela nous retournons dans la CLI
+Dans l'interface lié au réseau du DHCP, on va rajouter une commande
+ ```
+RouterParis (config)# interface gigabitEthernet 0/0/0
+RouterParis (config-if)# ip helper-address 192.168.0.254
+```
+On met bien l'ip du serveur DHCP, on sauvegarde tout ça, puis on jette un oeil sur les machines en les passant en statique pui DHCP
+
+<img width="1432" height="363" alt="image" src="https://github.com/user-attachments/assets/4d94c789-9d3c-49bc-b5f5-a2b611c7373d" />
+
+
+<img width="1470" height="321" alt="image" src="https://github.com/user-attachments/assets/ca63f056-19c4-4cc5-a822-abcd6b27b8d1" />
+
+ca m'a l'air fonctionnel
+
+<img width="609" height="518" alt="image" src="https://github.com/user-attachments/assets/8f3a22e3-0271-440b-9995-63334dc2d800" />
+sur le router aucune trace de configuration DHCP donc c'est bien notre serveur DHCP qui traite les qttribue des addresse IP sur les autres sous réseau
+
+Pour la parie de Lille je garde la config DHCP du RouterLille
+
+<img width="483" height="538" alt="image" src="https://github.com/user-attachments/assets/01e25ffa-2c32-40fa-8bea-1bcc3ab8e85c" />
+
+
+
+
+
+
+
+
+
 
 
 
