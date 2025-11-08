@@ -103,12 +103,12 @@ ServerParis (config)# ip route 0.0.0.0 0.0.0.0 92.12.34.2
 <img width="677" height="218" alt="image" src="https://github.com/user-attachments/assets/b8b2a57f-d458-4dad-b9f9-b64c032343f0" />
 
 
-Les paquets qui voudront sortir tout en ne ciblant pas le réseau VPN iront vers le serveur de Lille
+Les paquets qui voudront sortir tout en ne ciblant pas le réseau VPN iront vers le serveur de Lille  
 Je détermine une route par défaut sur le server de Lille en direction du server de Paris, de même avec le serveur vpn en direction du server de Paris
 
-Maintenant, certaines machines ont une addresse ip statique, mais d'autres attendent qu'un serveur dhcp leur en attribue une, on peut le faire avec un routeur.
+Maintenant, certaines machines ont une addresse ip statique, mais d'autres attendent qu'un serveur dhcp leur en attribue une, on peut le faire avec un routeur.  
 
-Au niveau du routeur, il faudra définir un pool pour chaque sous réseau
+Au niveau du routeur, il faudra définir un pool pour chaque sous réseau  
 Si on veut configurer un pool pour le lan de Paris :
 ```
 RouterParis (config)# ip dhcp pool LAN1
