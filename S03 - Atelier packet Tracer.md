@@ -100,7 +100,8 @@ ServerParis (config)# ip route 203.0.113.0 255.255.255.0 92.56.78.2
 ServerParis (config)# ip route 0.0.0.0 0.0.0.0 92.12.34.2
 ```
 
-<img width="677" height="218" alt="image" src="https://github.com/user-attachments/assets/b8b2a57f-d458-4dad-b9f9-b64c032343f0" />
+<img width="552" height="427" alt="image" src="https://github.com/user-attachments/assets/326ef2bd-c3b8-49ff-9761-22c931e0cbae" />
+
 
 
 Les paquets qui voudront sortir tout en ne ciblant pas le réseau VPN iront vers le serveur de Lille  
@@ -119,34 +120,37 @@ RouterParis (dhcp-config)# exit
 RouterParis (config)# ip dhcp excluded-address 10.0.0.1 10.0.0.10
 RouterParis (config)# end
 ```
+Au final ca nous donne comme configuration :
 
- <img width="470" height="522" alt="image" src="https://github.com/user-attachments/assets/78194884-3a26-4d3f-ba6a-8012db1a34d9" />
+ <img width="470" height="522" alt="image" src="https://github.com/user-attachments/assets/78194884-3a26-4d3f-ba6a-8012db1a34d9" />  
+ 
+Je vérifie que l'attribution d'IP via DHCP se fait  
 
 <img width="905" height="350" alt="image" src="https://github.com/user-attachments/assets/627a3aea-45d5-49f0-abe2-c5a367a25f66" />
 
-Si on tente un ping sur un pc du lan de Lille
+Si je tente un ping sur un pc du lan de Lille
 
 <img width="1833" height="505" alt="image" src="https://github.com/user-attachments/assets/fce32815-c61d-4491-9c75-a049357c3cfd" />
 
-ou sur un ordi du R&D
+Ou sur un ordinateur du R&D
 
 <img width="1125" height="652" alt="image" src="https://github.com/user-attachments/assets/2acca112-3b39-4723-8dd6-ed1afa4ba716" />
 
-Le DHCP est fonctionnel
+Le DHCP est fonctionnel.
 
-La suite étant de remplacer les switchs WiFi par des relay et d'ajouter un serveur DHCP dans la DMZ et le faire fonctionner sur les différents sous-réseaux
+La suite étant de remplacer les switchs WiFi par des relays, d'ajouter un serveur DHCP dans la DMZ et le faire fonctionner sur les différents sous-réseaux
 
 
 <img width="1843" height="709" alt="image" src="https://github.com/user-attachments/assets/b54e6850-4ffd-4683-b659-94cc97576281" />
 
-il n y a pas beaucoup d'option de configuration sur les relays WiFi, j'imagine que ça se joue au niveau du router  
+Il n y a pas beaucoup d'options de configuration sur les relays WiFi, j'imagine que ça se joue au niveau du router  
 
 Du coup occupons nous du server DHCP.
-Déjà j'efface les pool configuré sur le router
+Déjà j'efface les pool configurés sur le router
 ```
 RouterParis (config)# no ip dhcp pool LAN1
 ```
-Ainsi que les plages d'address exclues du DHCP
+Ainsi que les plages d'addresses exclues du DHCP
 
 ```
 RouterParis (config)# no ip dhcp excluded-address 10.0.0.1 10.0.0.10
@@ -157,13 +161,15 @@ Maintenant dans le serveur DHCP je vais faire un pool pour chaque sous-réseau
 
 <img width="980" height="453" alt="image" src="https://github.com/user-attachments/assets/a3e2f393-77d5-453d-9a83-ab939a609334" />
 
-Ensuite il faut indiquer au routeur de relayer les trames de diffusion dhcp vers le server dhcp, pour cela je retourne dans la CLI
+Ensuite il faut indiquer au routeur de relayer les trames de diffusion dhcp vers le server dhcp, pour cela je retourne dans la CLI  
 Dans l'interface lié au réseau du DHCP, je rajoute une commande
+
  ```
 RouterParis (config)# interface gigabitEthernet 0/0/0
 RouterParis (config-if)# ip helper-address 192.168.0.254
 ```
-Je mets bien l'ip du serveur DHCP, je sauvegarde tout ça, puis je jette un oeil sur les machines en les passant en statique pui DHCP
+
+Je mets bien l'ip du serveur DHCP, je sauvegarde tout ça, puis je jette un oeil sur les machines en les passant en IP statique puis DHCP
 
 <img width="1432" height="363" alt="image" src="https://github.com/user-attachments/assets/4d94c789-9d3c-49bc-b5f5-a2b611c7373d" />
 
