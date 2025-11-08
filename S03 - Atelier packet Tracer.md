@@ -91,7 +91,7 @@ router (config-if)# end
 
 J'en profite pour changer le hostname et ajouter un mot de passe  
 Je fais pareil avec les autres routeurs  
-Ensuite pour les routage sur le serveur de Paris, je détermine une route statique ciblant le réseau 203.0.112.0 vers le serveur VPN et une route par défaut vers le serveur de Lille :
+Ensuite pour les routages sur le serveur de Paris, je détermine une route statique ciblant le réseau 203.0.112.0 vers le serveur VPN et une route par défaut vers le serveur de Lille :
 
 ```
 ServerParis> enable
