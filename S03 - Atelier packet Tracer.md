@@ -254,21 +254,21 @@ router (config-if)# end
 
 J'en profite pour changer le hostname et ajouter un mot de passe  
 Je fais pareil avec les autres routeurs  
-Ensuite pour les routages sur le serveur de Paris, je détermine une route statique ciblant le réseau 203.0.112.0 vers le serveur VPN et une route par défaut vers le serveur de Lille :
+Ensuite pour les routages sur le router de Paris, je détermine une route statique ciblant le réseau 203.0.112.0 vers le router VPN et une route par défaut vers le router de Lille :
 
 ```
-ServerParis> enable
-ServerParis# conf t
-ServerParis (config)# ip route 203.0.113.0 255.255.255.0 92.56.78.2
-ServerParis (config)# ip route 0.0.0.0 0.0.0.0 92.12.34.2
+RouterParis> enable
+RouterParis# conf t
+RouterParis (config)# ip route 203.0.113.0 255.255.255.0 92.56.78.2
+RouterParis (config)# ip route 0.0.0.0 0.0.0.0 92.12.34.2
 ```
 
 <img width="552" height="427" alt="image" src="https://github.com/user-attachments/assets/326ef2bd-c3b8-49ff-9761-22c931e0cbae" />
 
 
 
-Les paquets qui voudront sortir tout en ne ciblant pas le réseau VPN iront vers le serveur de Lille  
-Je détermine une route par défaut sur le server de Lille en direction du server de Paris, de même avec le serveur vpn en direction du server de Paris
+Les paquets qui voudront sortir tout en ne ciblant pas le réseau VPN iront vers le router de Lille  
+Je détermine une route par défaut sur le router de Lille en direction du router de Paris, de même avec le router vpn en direction du router de Paris
 
 Maintenant, certaines machines ont une addresse ip statique, mais d'autres attendent qu'un serveur dhcp leur en attribue une, on peut le faire avec un routeur.  
 
