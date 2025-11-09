@@ -342,6 +342,7 @@ Je mets bien l'ip du serveur DHCP, je sauvegarde tout ça, puis je jette un oeil
 ca m'a l'air fonctionnel
 
 <img width="609" height="518" alt="image" src="https://github.com/user-attachments/assets/8f3a22e3-0271-440b-9995-63334dc2d800" />
+
 sur le router aucune trace de configuration DHCP donc c'est bien notre serveur DHCP qui attribue des addresse IP pour les machines des autres sous-réseau
 
 Pour la partie de Lille je garde la config DHCP du RouterLille.
