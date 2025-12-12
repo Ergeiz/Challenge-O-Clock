@@ -72,3 +72,5 @@
 
 - On peut voir que batman n'a pas accès au dossier partage_fichier ! quel tocard ce Batman :smirk: :smirk:
 
+*je précise au cas où certains voudraient vérifier leur résultat en se basant sur mon truc, ma méthode pour que sudo ne demande pas de password n'est pas la bonne (de cette manière tout le monde peut se co à cette user), mais après avoir parler de respecter les bonnes pratiques je la trouvais marrante*
+
