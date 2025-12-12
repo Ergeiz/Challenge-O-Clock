@@ -16,7 +16,7 @@
 ## Cheminement
 
 - J'installe Rocky Linux minimal version en laissant désactivé le compte Root et en accordant les droits administrateurs à l'User crée
-- Je me connecte avec l'utilisateur crée
+- Je me connecte avec l'user crée
 
 ![](./Assets/Images/SA5E03/capt1.png)
 
