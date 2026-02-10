@@ -111,9 +111,10 @@ Pour mener a bien ce projet, plusieurs méthodologies peuvent être combinées:
 > 
 > Commenter le Manifeste (questions, points positifs, critiques…) dans un fichier (libre choix de l’outil).
 
-## WBS
+[Retour au début](#raccourcis)
 
-# Énoncé E2
+
+# Énoncé E2 - WBS
 
 > ## Contexte
 >
@@ -346,4 +347,4 @@ style res4 fill:#e6ffe6,stroke:#999
 
 ```
 
-
+[Retour au début](#raccourcis)
