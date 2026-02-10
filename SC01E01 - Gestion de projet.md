@@ -148,10 +148,10 @@ Pour mener a bien ce projet, plusieurs méthodologies peuvent être combinées:
 ---
 title: Modernisation de l'infrastructure IT du campus
 ---
-flowchart TD
+flowchart TB
 
   
-
+classDef invis fill:transparent,stroke:transparent,color:transparent;
 
   %% -- Niveau 1 (grands lots) --
   %% S["1.1 Serveur"]
@@ -159,115 +159,191 @@ flowchart TD
   %% F["1.3 Firewall / Sécurité périmétrique"]
   %% R["1.4 Réseau (VLAN + Wi-Fi sécurisé)"]
 
-  %% ### Partie Serveurs ###
 
-subgraph sub1 [ ]
-direction TB
+
+ %%subgraph sub1[ ]
+ %%direction TB
+
+  %% ### Partie Serveurs ###
   
-  subgraph "1 - Serveurs"
+  subgraph cat1[1 - Serveurs]
+  direction LR
+
+  a1(( ))
+  subgraph srv1[1.1 Cadrage & préparation]
   direction TB
-  subgraph "1.1 Cadrage & préparation"
-  direction RL
+  b1(( ))
   S11["1.1.1 Définition des besoins (comptes, partages, quotas)"]
   S12["1.1.2 Choix de l'OS et des rôles (AD/LDAP, fichiers, sauvegardes)"]
   S13["1.1.3 Dimensionnement CPU,RAM et stockage"]
   end
+  class b1 invis;
 
-  subgraph "1.2 Mise en place"
-  direction RL
+  subgraph srv2[1.2 Mise en place]
+  direction TB
+  b2(( ))
   S21["1.2.1 Installation OS + durcissement (SSH, MAJ, pare-feu)"]
   S22["1.2.2 Services fichiers (SMB/NFS) + droits"]
   S23["1.2.3 Supervision & journalisation (logs, alertes)"]
   end
+  class b2 invis;
 
-  subgraph "1.3 Validation & mise en prod"
-direction RL
+  subgraph srv3[1.3 Validation & mise en prod]
+direction TB
+  b3(( ))
   S31["1.3.1 Tests accès (apprenants/formateurs/salariés)"]
   S32["1.3.2 Plan de bascule + rollback"]
   S33["1.3.3 Documentation + transfert (alternant/équipe)"]
   end
+  class b3 invis;
   end
+  class a1 invis;
 
   %% ### Partie NAS ###
-  subgraph "Nas / Stockage"
+  subgraph cat2[2 - Nas / Stockage]
+  direction LR
+
+  a2(( ))
+  subgraph nas1[2.1 Cadrage & conception]
   direction TB
-  subgraph "2.1 Cadrage & conception"
-  direction RL
+  c1(( ))
   N11["2.1.1 Choix des technos (RAID, ZFS/Btrfs, iSCSI/SMB/NFS)"]
   N12["2.1.2 Définition de la politique de sauvegarde (3-2-1, rétention)"]
   N13["2.1.3 Plan de la gestion des droits (partages, groupes, quotas)"]
   end
+  class c1 invis;
 
-  subgraph "2.2 Déploiement"
-  direction RL
+  subgraph nas2[2.2 Déploiement]
+  direction TB
+  c2(( ))
   N21["2.2.1 Installation du NAS & configuration du stockage"]
   N22["2.2.2 Création des partages & ACL"]
   N23["2.2.3 Sauvegardes (jobs, tests des restauration --> très important)"]
   end
+  class c2 invis;
 
-  subgraph "2.3 Exploitation"
-  direction RL
+  subgraph nas3[2.3 Exploitation]
+  direction TB
+  c3(( ))
   N31["2.3.1 Monitoring (disques, SMART, capacité)"]
   N32["2.3.2 Mises à jour & maintenance"]
   N33["2.3.3 Procédures incident / PRA (si prévu)"]
   end
+  class c3 invis;
   end
+  class a2 invis;
 
   %% Partie Firewall ###
-  subgraph Firewall
-  direction TB
-  subgraph "3.1 Architecture & règles"
- direction RL
+  subgraph cat3[3 - Firewall]
+  direction LR
+
+  a3(( ))
+  subgraph fir1[3.1 Architecture & règles]
+ direction TB
+  d1(( ))
   F11["3.1.1 Cartographie des réseaux"]
   F12["3.1.2 Politique de filtrage"]
   F13["3.1.3 Accès distant sécurisé via VPN"]
   end
+  class d1 invis;
 
-  subgraph "3.2 Implémentation"
-  direction RL
+  subgraph fir2[3.2 Implémentation]
+  direction TB
+  d2(( ))
   F21["3.2.1 Installation appliance/VM"]
   F22["3.2.2 NAT / règles / objets / aliases"]
   F23["3.2.3 Services sécurité, DNS filtrant si prévu"]
   end
+  class d2 invis;
 
-  subgraph "3.3 Tests & exploitation"
-  direction RL
+  subgraph fir3[3.3 Tests & exploitation]
+  direction TB
+  d3(( ))
   F31["3.3.1 Tests règles et isolement VLAN"]
   F32["3.3.2 logs et alert"]
   F33["3.3.3 Documentation (règles, VPN, procédures)"]
   end
+  class d3 invis;
+  
   end
+  class a3 invis;
 
   %% ### Partie Réseaux ###
-  subgraph "Réseaux"
+  subgraph cat4[4 - Réseaux]
+  direction LR
+
+  a4(( ))
+  subgraph res1[4.1 Conception réseau]
   direction TB
-  subgraph "4.1 Conception réseau"
-  direction RL
+  e1(( ))
   R11["4.1.1 Plan d’adressage IP et sous-réseaux"]
   R12["4.1.2 attribution VLAN (salariés, formateurs, apprenants, invités, admin)"]
   R13["4.1.3 Matériel & topologie (switchs, AP, liens)"]
   end
+  class e1 invis;
 
-  subgraph "4.2 VLAN & switch"
-direction RL
+  subgraph res2[4.2 VLAN & switch]
+direction TB
+  e2(( ))
   R21["4.2.1 Configuration trunks/access"]
   R22["4.2.2 Routage entre VLAN (via firewall/L3)"]
   R23["4.2.3 Services réseau (DHCP par VLAN, DNS, NTP)"]
   end
+  class e2 invis;
 
-  subgraph "4.3 Wi-Fi sécurisé"
-  direction RL
+  subgraph res3[4.3 Wi-Fi sécurisé]
+  direction TB
+  e3(( ))
   R31["4.3.1 SSID par profils (interne, apprenants, invités)"]
   R32["4.3.2 Sécurité (WPA2/3-Enterprise)"]
   R33["4.3.3 Portail invité / isolation clients (si prévu)"]
   end
+  class e3 invis;
 
-  subgraph "4.4 Tests & recette"
-  direction RL
+  subgraph res4[4.4 Tests & recette]
+  direction TB
+  e4(( ))
   R41["4.4.1 Tests couverture Wi-Fi et itinérent"]
   R42["4.4.2 Tests de segmentation des VLAN"]
   R43[".4.4.3 Recette et documentation"]
 end
+  class e4 invis;
   end
-  end
+  class a4 invis;
+   %% end
+
+
+%% Ordre des block
+cat1 --> cat2 --> cat3 --> cat4
+b1 --> b2 --> b3
+c1 --> c2 --> c3
+d1 --> d2 --> d3
+e1 --> e2 --> e3 --> e4
+
+ linkStyle default stroke:transparent;
+style cat1 fill:transparent,stroke:#999,stroke-width:4px
+style cat2 fill:transparent,stroke:#999,stroke-width:4px
+style cat3 fill:transparent,stroke:#999,stroke-width:4px
+style cat4 fill:transparent,stroke:#999,stroke-width:4px
+
+style srv1 fill:#ffe5e5,stroke:#999
+style srv2 fill:#ffe5e5,stroke:#999
+style srv3 fill:#ffe5e5,stroke:#999
+
+style nas1 fill:#e6f0ff,stroke:#999
+style nas2 fill:#e6f0ff,stroke:#999
+style nas3 fill:#e6f0ff,stroke:#999
+
+style fir1 fill:#e6f0ff,stroke:#999
+style fir2 fill:#e6f0ff,stroke:#999
+style fir3 fill:#e6f0ff,stroke:#999
+
+style res1 fill:#e6ffe6,stroke:#999
+style res2 fill:#e6ffe6,stroke:#999
+style res3 fill:#e6ffe6,stroke:#999
+style res4 fill:#e6ffe6,stroke:#999
+
+
 ```
+
+
