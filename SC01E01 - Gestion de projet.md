@@ -94,3 +94,9 @@
 - Déploiement progressif sans interruption majeure de service.
 - Mise en production complète dans le délai défini par la direction (ex. 4 à 6 mois).
 
+# Agile
+
+> À faire également Lire le Manifeste pour le développement Agile de logiciels: https://agilemanifesto.org/iso/fr/manifesto.html
+> 
+> Commenter le Manifeste (questions, points positifs, critiques…) dans un fichier (libre choix de l’outil).
+
