@@ -1,7 +1,7 @@
 # Raccourcis
 
-- [Challenge 2](#énoncé-e2)
-- [Challenge 3](#énoncé-e3)
+- [Challenge 2](#énoncé-e2---wbs)
+- [Challenge 3](#énoncé-e3---risques)
 
 
 # Énoncé E1
@@ -349,7 +349,7 @@ style res4 fill:#e6ffe6,stroke:#999
 ```
 [Retour au début](#raccourcis)
 
-# Énoncé E3
+# Énoncé E3 - Risques
 > ## Contexte
 > 
 > Vous êtes responsable de l'informatique au sein d'un campus de formation professionnelle (en présentiel 😁).
@@ -380,4 +380,49 @@ style res4 fill:#e6ffe6,stroke:#999
 >    Gardez bien le fichier, ça peut toujours servir !
 >    Prenez le temps de chercher de la documentation sur le sujet
 >
+
+---
+
+> [!NOTE]
+> Je determine les risques dans ces 3 catégorie: technique, humain, organisationnel
+
+### Risques techniques:
+- Mauvaise configuration du firewall provoquant des faille de sécurité
+- Serveur et NAS mal dimensionnés 
+- Panne server / NAS
+- Mauvaise configuration VLAN empêchant l'isolation des sous-réseaux
+- Interruption du réseau
+- Mauvaise couverture du Wi-Fi
+- Surcharge de la borne Wi-Fi
+- Attaque réseau
+
+### Risques humains
+- Formation des utilisateurs insuffisante ou mal géré
+- Erreurs humaines lors de déployement
+- Mauvaise utilisation de l'alternant
+
+### Risques organisationnels
+- Documentation imcomplète ou mal réalisée des configurations
+- Retard de la livraison de matériels
+- Mauvaise évaluation du budget
+
+> [!NOTE]
+> J'en évalue la probabilité, l'impact et en déduit la criticité, ainsi que les actions à mener pour limiter/ gérer le risque
+
+
+| Risque | Probabilité | Impact | Criticité | Actions |
+| :---: | :---: | :---: | :---:| :---: |
+| Firewall | Moyenne | Critique | 6 | Test config par un tiers |
+| Interruption réseau | Moyenne | Critique | 6 | Plan de migration hors heures ouvrées, plan de rollback, tests sur environnement pilote |
+| Sous-dimensionnement serveurs/NAS | Moyenne | Critique | 6 | Étude de charge préalable, marge de capacité 30%, supervision des performances |
+| Mauvaise segmentation VLAN entrainant accès non-autorisés | Moyen | Critique | 6 | Validation de l'architecture réseau, tests de sécurité, audit des configurations |
+| Retard livraison matériels | Moyenne | Moyen | 4 | Commandes anticipées, plusieurs fournisseurs, suivi planning achats |
+| Mauvaise Documentation configuration| Moyenne | Moyen | 4 | Procédure de documentation obligatoire, dépôt centralisé Wiki/GitHub |
+| Erreurs humaines deployement (alt/admin) | Moyenne | Moyenne | 4 | Procédures écrites, validation par pair |
+| Mauvaise couverture Wi-Fi ou surcharge bornes | Moyenne | Moyen | 4 | Étude de couverture radio préalable, tests de charge, ajout de bornes supplémentaires si nécessaire |
+| Défaillance matériel (serveurs/NAS) | Faible | Critique | 3 | Redondance des équipements, contrats de maintenance, stock pièces de rechange |
+| Mauvaise évaluation Budget | Faible | Critique | 3 | Prévision budgétaire avec marge, validation direction, suivi des coûts projet |
+| Attaque réseau pendant migration | Faible | Critique | 3 | Renforcement supervision sécurité, surveillance logs, plan réponse incident |
+
+[Retour au début](#raccourcis)
 
