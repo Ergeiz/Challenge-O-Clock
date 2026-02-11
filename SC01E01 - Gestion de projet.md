@@ -412,7 +412,7 @@ style res4 fill:#e6ffe6,stroke:#999
 
 | Risque | Probabilité | Impact | Criticité | Actions |
 | :---: | :---: | :---: | :---:| :---: |
-| Firewall | Moyenne | Critique | 6 | Test config par un tiers |
+| Firewall | Moyenne | Critique | 6 | Relecture config par un tiers, test en préproduction |
 | Interruption réseau | Moyenne | Critique | 6 | Plan de migration hors heures ouvrées, plan de rollback, tests sur environnement pilote |
 | Sous-dimensionnement serveurs/NAS | Moyenne | Critique | 6 | Étude de charge préalable, marge de capacité 30%, supervision des performances |
 | Mauvaise segmentation VLAN entrainant accès non-autorisés | Moyen | Critique | 6 | Validation de l'architecture réseau, tests de sécurité, audit des configurations |
