@@ -1,7 +1,7 @@
 # Raccourcis
 
 - [Challenge 2](#énoncé-e2---wbs)
-- [Challenge 3](#énoncé-e3---risques)
+- [Challenge 3](#énoncé-e3---gestion-des-risques)
 
 
 # Énoncé E1
@@ -349,7 +349,7 @@ style res4 fill:#e6ffe6,stroke:#999
 ```
 [Retour au début](#raccourcis)
 
-# Énoncé E3 - Risques
+# Énoncé E3 - Gestion des risques
 > ## Contexte
 > 
 > Vous êtes responsable de l'informatique au sein d'un campus de formation professionnelle (en présentiel 😁).
