@@ -1,6 +1,7 @@
 # Raccourcis
 
 - [Challenge 2](#énoncé-e2)
+- [Challenge 3](#énoncé-e3)
 
 
 # Énoncé E1
@@ -346,5 +347,37 @@ style res4 fill:#e6ffe6,stroke:#999
 
 
 ```
-
 [Retour au début](#raccourcis)
+
+# Énoncé E3
+> ## Contexte
+> 
+> Vous êtes responsable de l'informatique au sein d'un campus de formation professionnelle (en présentiel 😁).
+> 
+> Le campus compte en permanence environ 500 personnes, entre les salariés (une quinzaine), les formateurs (freelances, formateurs occasionnels) et les apprenants (formation continue et alternance).
+> 
+> La direction vous demande de moderniser l’infrastructure IT du campus pour accueillir de nouveaux services numériques : serveurs fichiers, NAS, firewall, VLAN et accès sécurisé Wi-Fi.
+> 
+> Dans votre service, vous accueillez actuellement un alternant.
+> 
+> ##Consignes
+>
+> Vous avez créé la note de cadrage du projet ainsi que le WBS.
+> 
+> Aujourd'hui on s'attaque à l'analyse des risques !
+> 
+>    Listez au moins 10 risques du projet (technique, humain, organisationnel)
+>    Évaluez chaque risque :
+>        Probabilité : faible/moyenne/forte
+>        Impact : faible/moyen/critique
+>        Criticité = probabilité × impact
+>    Classez les risques par criticité
+>
+> Livrable attendu : registre des risques avec évaluation
+> ## Notes
+>
+>    Vous pouvez utiliser les outils de votre choix pour le registre
+>    Gardez bien le fichier, ça peut toujours servir !
+>    Prenez le temps de chercher de la documentation sur le sujet
+>
+
