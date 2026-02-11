@@ -360,7 +360,7 @@ style res4 fill:#e6ffe6,stroke:#999
 > 
 > Dans votre service, vous accueillez actuellement un alternant.
 > 
-> ##Consignes
+> ## Consignes
 >
 > Vous avez créé la note de cadrage du projet ainsi que le WBS.
 > 
