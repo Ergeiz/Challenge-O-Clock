@@ -214,7 +214,7 @@ Bonne chance, et posez des questions si besoin.
 flowchart LR
 
 A["AD, MFA"]
-B["Microsot 365, Sharepoint, App métier, Wordpress"]
+B["Microsoft 365, Sharepoint, App métier, Wordpress"]
 C["MySQL, Azure Backup"]
 
 A ==> B ==> C
