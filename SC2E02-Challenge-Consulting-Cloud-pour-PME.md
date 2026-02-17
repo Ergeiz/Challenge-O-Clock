@@ -210,6 +210,16 @@ Bonne chance, et posez des questions si besoin.
 | Sauvegardes | Azure Backup + Recovery Services Vault + politiques de rétention | PaaS | Azure | Remplace sauvegardes manuelles, restauration fiable, RGPD |
 | Site web | WordPress managé (App Service + MySQL) | PaaS | Azure | Maintenance simplifié, disponibilité |
 
+```mermaid
+flowchart LR
+
+A["AD, MFA"]
+B["Microsot 365, Sharepoint, App métier, Wordpress"]
+C["MySQL, Azure Backup"]
+
+A ==> B ==> C
+
+```
 ### Pour le choix du Privider
 
 | Critère | Azure | AWS | GCP | OVHcloud | Scaleway |
