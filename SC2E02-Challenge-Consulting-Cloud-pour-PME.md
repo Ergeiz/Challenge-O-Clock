@@ -198,7 +198,7 @@ Bonne chance, et posez des questions si besoin.
 
 # Réponse
 
-### Pour l'architecture cible
+## Pour l'architecture cible
 
 | Composant | Proposition | Modèle | Provider | Justification courte |
 |---|---|---|---|---|
@@ -220,7 +220,10 @@ C["MySQL, Azure Backup"]
 A ==> B ==> C
 
 ```
-### Pour le choix du Privider
+
+---
+
+## Pour le choix du Provider
 
 | Critère | Azure | AWS | GCP | OVHcloud | Scaleway |
 |---|---|---|---| --- | --- |
@@ -229,14 +232,18 @@ A ==> B ==> C
 | Coût estimé | Moyen, optimisable avec les bundle Microsoft | Élevé à configuration équivalente | Moyen à élevé selon les services | moins cher en IaaS | Compétitif sur VM |
 | Support / simplicité | Bonne intégration pour les PME utilisant les produits Microsofts | Plus complexe | Inteface claire mais utilisations plus contextuelles | Ádministration simple mais plus de choses à gérer pour la PME | Simple mais nécéssite plus d'administration |
 
-### En conclusion
+---
+
+## En conclusion
 
 L'entreprise utilise déja des outils Windows, cela facilite donc la migration vers Azure.
 Les services PaaS proposés permettent de réduire la charge d’exploitation et d’améliorer la disponibilité des applications.
 La présence de datacenters en France répond aussi aux contraintes RGPD de localisation des données.
 Cette solution est la mieux adapté, elle offre une simplicité d’administration, de nombreuses fonctionnalités et des possibiltés d'évolution dans le futur.
 
-### Estimation budgetaire
+---
+
+## Estimation budgetaire
 
 |  Service | Estimation au mois (approximatif) |
 | --- | --- |
@@ -248,9 +255,11 @@ Cette solution est la mieux adapté, elle offre une simplicité d’administrati
 | Total | environ 1400€ - 1600€ par mois |
 
 > [!Note]
-> Les couts peuvent varier selon le nombre d’utilisateurs, les performances nécessaires des ressources cloud, les volumes de stockage et de sauvegarde, les besoins de haute disponibilité et de trafic réseau
+> Les coûts peuvent varier selon le nombre d’utilisateurs, les performances nécessaires des ressources cloud, les volumes de stockage et de sauvegarde, les besoins de haute disponibilité et de trafic réseau
 
-### Risques majeures
+---
+
+## Risques majeures
 
 | Risques | Actions envisageables |
 | --- | --- |
