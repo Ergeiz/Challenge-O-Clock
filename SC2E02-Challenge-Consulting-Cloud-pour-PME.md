@@ -244,8 +244,8 @@ Cette solution est la mieux adapté, elle offre une simplicité d’administrati
 
 | Risques | Actions envisageables |
 | --- | --- |
-| Dépendance | privilégier les technologies standardisées, documenter l'architecture, sauvegarde exportable hors plateforme |
+| Dépendance | Privilégier les technologies standardisées, documenter l'architecture, sauvegarde exportable hors plateforme |
 | Migration (incompatibilité technique ou interruption de service) | audit technique avant migration, environnement de test, migration par lot |
 | Sécurité (mauvais controle des accés, fuite de donnees) | MFA, audit de sécurité régulier |
-| Budget (ressource mal dimensionnées ou mal utilisées ) | dimensinnement initial prudent, revue mensuelle des ressources |
-| Cloud indisponible | sauvegarde régilière, réplication multi-zone |
+| Budget (ressource mal dimensionnées ou mal utilisées ) | Dimensinnement initial prudent, revue mensuelle des ressources |
+| Cloud indisponible | Sauvegarde régilière, réplication multi-zone |
